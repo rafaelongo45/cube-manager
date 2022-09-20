@@ -1,22 +1,19 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet, View } from "react-native";
-import FooterComponent from "./components/Footer/Index";
-import HeaderComponent from "./components/Header/Index";
 import HomeComponent from "./components/Home/Index";
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.container}>
-      <HeaderComponent />
-      <HomeComponent />
-      <FooterComponent />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeComponent}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    position: "relative",
-    flex: 1,
-    backgroundColor: "#2D2D2D",
-  },
-});
