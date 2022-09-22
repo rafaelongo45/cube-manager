@@ -1,10 +1,11 @@
-import { StyleSheet, Text } from "react-native-web";
+import { Text, View } from "react-native";
+import { StyleSheet} from "react-native-web";
 
 function HeaderComponent() {
   return (
-    <article style={headerStyles.wrapper}>
-      <h1 style={headerStyles.text}>Cube</h1>
-    </article>
+    <View style={headerStyles.wrapper}>
+      <Text style={headerStyles.text}>Cube</Text>
+    </View>
   );
 }
 export default HeaderComponent;

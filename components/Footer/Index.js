@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native-web";
+import { StyleSheet, View } from "react-native-web";
 import { IoCube, IoHome } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";
 import RenderIcon from "./RenderIcon.js";

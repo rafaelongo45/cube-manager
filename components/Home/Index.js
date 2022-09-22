@@ -1,13 +1,14 @@
-import { StyleSheet, View } from "react-native-web";
+import { Text, View } from "react-native";
+import { StyleSheet } from "react-native-web";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
 
 function HomeComponent() {
   return (
-    <View style={HomeStyle.container}>
+    <View  style={HomeStyle.container}>
       <HeaderComponent />
-      <article style={HomeStyle.wrapper}>Opa sou o componente home em!</article>
-      <FooterComponent />
+      <Text style={HomeStyle.wrapper}>Opa sou o componente home em!</Text>
+      {/* <FooterComponent /> */}
     </View>
   );
 }
