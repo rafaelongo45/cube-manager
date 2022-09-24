@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet, View } from "react-native";
+import { StatusBar } from "react-native";
 import HomeComponent from "./components/Home/Index";
 
 export default function App() {
@@ -14,6 +14,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
+      <StatusBar backgroundColor={"#3C3C3C"} barStyle={"light-content"}/>
     </NavigationContainer>
   );
 }
