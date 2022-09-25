@@ -1,20 +1,23 @@
 import { StyleSheet } from "react-native-web";
+import Icon from "react-native-vector-icons/Ionicons.js"
+import { View } from "react-native";
 
-function RenderIcon({ Name, circle, stringName, iconClicked, setIconClicked }) {
+
+function RenderIcon({ circle, stringName, iconClicked, setIconClicked }) {
   function setClickedStyle() {
     return iconClicked === stringName
       ? footerStyles.iconWrapper && footerStyles.selected
       : footerStyles.empty;
   }
   return (
-    <div
+    <View
       style={circle ? footerStyles.circle : setClickedStyle()}
       onClick={() => {
         setIconClicked(stringName);
       }}
     >
-      <Name style={circle ? footerStyles.plusIcon : footerStyles.icon} />
-    </div>
+      <Icon name={stringName} size={35} color="#fff"/>
+    </View>
   );
 }
 export default RenderIcon;
@@ -52,10 +55,12 @@ const footerStyles = StyleSheet.create({
     position: "absolute",
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     top: -45,
     width: 65,
     height: 65,
-    borderRadius: "50%",
+    left: "40%",
+    borderRadius: 50,
     backgroundColor: "#3C3C3C",
   },
 
@@ -85,7 +90,7 @@ const footerStyles = StyleSheet.create({
 
   selected: {
     backgroundColor: "rgba(255, 255, 255, 0.25)",
-    borderRadius: "25%",
+    borderRadius: 25,
   },
 
   empty: {},

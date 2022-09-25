@@ -1,23 +1,21 @@
-import { StyleSheet, View } from "react-native-web";
-import { IoCube, IoHome } from "react-icons/io5";
-import { FiPlus } from "react-icons/fi";
+import { StyleSheet} from "react-native-web";
 import RenderIcon from "./RenderIcon.js";
 import { useState } from "react";
+import { View } from "react-native";
 
 function FooterComponent() {
   const [iconClicked, setIconClicked] = useState("");
   const iconArr = [
-    { name: IoHome, circle: false, stringName: "IoHome" },
-    { name: FiPlus, circle: true, stringName: "FiPlus" },
-    { name: IoCube, circle: false, stringName: "IoCube" },
+    { circle: false, stringName: "home-sharp" },
+    { circle: true, stringName: "add" },
+    { circle: false, stringName: "file-tray-sharp" },
   ];
   return (
-    <article style={footerStyles.wrapper}>
+    <View style={footerStyles.wrapper}>
       {iconArr.map((iconObject) => {
         return (
           <RenderIcon
-            Name={iconObject.name}
-            key={iconObject.name}
+            key={iconObject.stringName}
             circle={iconObject.circle}
             stringName={iconObject.stringName}
             iconClicked={iconClicked}
@@ -25,7 +23,7 @@ function FooterComponent() {
           />
         );
       })}
-    </article>
+    </View>
   );
 }
 export default FooterComponent;
@@ -38,6 +36,7 @@ const footerStyles = StyleSheet.create({
     bottom: 0,
     left: 0,
     display: "flex",
+    flexDirection: "row"  ,
     justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "#3C3C3C",

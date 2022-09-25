@@ -8,7 +8,7 @@ function HomeComponent() {
     <View  style={HomeStyle.container}>
       <HeaderComponent />
       <Text style={HomeStyle.wrapper}>Opa sou o componente home em!</Text>
-      {/* <FooterComponent /> */}
+      <FooterComponent />
     </View>
   );
 }
