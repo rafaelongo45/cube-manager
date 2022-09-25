@@ -1,97 +1,46 @@
 import { StyleSheet } from "react-native-web";
-import Icon from "react-native-vector-icons/Ionicons.js"
-import { View } from "react-native";
-
+import Icon from "react-native-vector-icons/Ionicons.js";
+import styled from "styled-components";
 
 function RenderIcon({ circle, stringName, iconClicked, setIconClicked }) {
-  function setClickedStyle() {
-    return iconClicked === stringName
-      ? footerStyles.iconWrapper && footerStyles.selected
-      : footerStyles.empty;
-  }
   return (
-    <View
-      style={circle ? footerStyles.circle : setClickedStyle()}
-      onClick={() => {
-        setIconClicked(stringName);
-      }}
-    >
-      <Icon name={stringName} size={35} color="#fff"/>
-    </View>
+    <>
+      {circle ? (
+        <PlusWrapper>
+          <Icon name={stringName} size={55} color="#fff" />
+        </PlusWrapper>
+      ) : (
+        <IconWrapper>
+          <Icon name={stringName} size={35} color="#fff" />
+        </IconWrapper>
+      )}
+    </>
   );
 }
 export default RenderIcon;
 
-{
-  /* <article style={footerStyles.wrapper}>
-      <div style={footerStyles.iconWrapper}>
-        <IoHome style={footerStyles.icon} />
-      </div>
-      <div style={footerStyles.circle}>
-        <FiPlus style={footerStyles.plusIcon} />
-      </div>
-      <div style={footerStyles.iconWrapper}>
-        <IoCube style={footerStyles.icon} />
-      </div>
-    </article> */
-}
+const IconWrapper = styled.View`
+  display: flex;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  width: 11%;
+  height: 50px;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.25);
+`;
 
-const footerStyles = StyleSheet.create({
-  wrapper: {
-    position: "absolute",
-    width: "100%",
-    height: 80,
-    bottom: 0,
-    left: 0,
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "#3C3C3C",
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-  },
-
-  circle: {
-    position: "absolute",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    top: -45,
-    width: 65,
-    height: 65,
-    left: "40%",
-    borderRadius: 50,
-    backgroundColor: "#3C3C3C",
-  },
-
-  icon: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 37,
-    padding: 20,
-    paddingTop: 5,
-    paddingBottom: 5,
-  },
-
-  plusIcon: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 45,
-    position: "absolute",
-    top: 8,
-  },
-
-  iconWrapper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1,
-  },
-
-  selected: {
-    backgroundColor: "rgba(255, 255, 255, 0.25)",
-    borderRadius: 25,
-  },
-
-  empty: {},
-});
+const PlusWrapper = styled.View`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4px;
+  top: -50px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: #3c3c3c;
+`;
