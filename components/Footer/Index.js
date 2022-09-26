@@ -1,7 +1,6 @@
-import { StyleSheet} from "react-native-web";
 import RenderIcon from "./RenderIcon.js";
 import { useState } from "react";
-import { View } from "react-native";
+import styled from "styled-components";
 
 function FooterComponent() {
   const [iconClicked, setIconClicked] = useState("");
@@ -11,7 +10,7 @@ function FooterComponent() {
     { circle: false, stringName: "file-tray-sharp" },
   ];
   return (
-    <View style={footerStyles.wrapper}>
+    <Main>
       {iconArr.map((iconObject) => {
         return (
           <RenderIcon
@@ -23,43 +22,22 @@ function FooterComponent() {
           />
         );
       })}
-    </View>
+    </Main>
   );
 }
 export default FooterComponent;
 
-const footerStyles = StyleSheet.create({
-  wrapper: {
-    position: "absolute",
-    width: "100%",
-    height: 80,
-    bottom: 0,
-    left: 0,
-    display: "flex",
-    flexDirection: "row"  ,
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "#3C3C3C",
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-  },
-
-  plusIcon: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 40,
-    position: "absolute",
-    top: 8,
-  },
-
-  iconWrapper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1,
-    height: 50,
-    width: 50,
-    borderRadius: "20%",
-    backgroundColor: "rgba(255, 255, 255, 0.25)",
-  },
-});
+const Main = styled.View`
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3c3c3c;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+`;

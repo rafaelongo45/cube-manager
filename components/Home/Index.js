@@ -1,29 +1,27 @@
-import { Text, View } from "react-native";
-import { StyleSheet } from "react-native-web";
+import styled from "styled-components";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
 
 function HomeComponent() {
   return (
-    <View  style={HomeStyle.container}>
+    <Main>
       <HeaderComponent />
-      <Text style={HomeStyle.wrapper}>Opa sou o componente home em!</Text>
+      <Text>Opa sou o componente home em!</Text>
       <FooterComponent />
-    </View>
+    </Main>
   );
 }
 
 export default HomeComponent;
 
-const HomeStyle = StyleSheet.create({
-  container: {
-    position: "relative",
-    flex: 1,
-    backgroundColor: "#2D2D2D",
-  },
-  wrapper: {
-    marginTop: 80,
-    marginBottom: 80,
-    color: "white",
-  },
-});
+const Main = styled.View`
+  position: relative;
+  display: flex;
+  background-color: #2d2d2d;
+  height: 100%;
+`;
+
+const Text = styled.Text`
+  margin: 80px 0;
+  color: white;
+`;
