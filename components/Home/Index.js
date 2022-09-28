@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Checklist from "../Checklist/Index";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
 import Reminders from "../Reminders/Index";
@@ -8,6 +9,7 @@ function HomeComponent() {
     <Main>
       <HeaderComponent />
       <Reminders/>
+      <Checklist/>
       <FooterComponent />
     </Main>
   );

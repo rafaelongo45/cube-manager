@@ -2,8 +2,8 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   width: 100%;
-  height: ${(props) => (props.size < 1 ? 80 : 75 * props.size)}px;
-  margin-top: 180px;
+  height: ${(props) => (props.size > 1 ? 45 * props.size : 80)}px;
+  margin-top: 100px;
   border-radius: 18px;
   background-color: #3c3c3c;
   position: relative;
@@ -11,7 +11,8 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding-top: ${(props) => (props.size < 1 ? 0 : "16px")};
+  padding-left: 22px;
+  padding-bottom: ${(props) => (props.size < 1 ? 0 : "12px")};
 `;
 
 export const Circle = styled.View`
@@ -33,18 +34,18 @@ export const CenterText = styled.Text`
   font-size: 16px;
 `;
 
-export const Reminder = styled.View`
-  width: 350px;
-  height: 45px;
-  border-radius: 8px;
-  background-color: white;
-  justify-content: center;
-  margin-bottom: 18px;
-  padding-left: 11px;
+export const CheckItem = styled.View`
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 `;
 
-export const ReminderText = styled.Text`
-  font-weight: 600;
+export const CheckText = styled.Text`
+  margin-left: 12px;
   font-size: 16px;
-  display: flex;
+  font-weight: 600;
+  color: white;
+  text-decoration-line: ${(props) => (props.checked ? "line-through" : "none")};
 `;
