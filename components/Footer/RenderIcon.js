@@ -1,16 +1,22 @@
+import { useContext } from "react";
 import { Pressable } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons.js";
 import styled from "styled-components";
+import NavigationContext from "../../contexts/NavigationContext";
 
-function RenderIcon({ circle, stringName, iconClicked, setIconClicked }) {
+function RenderIcon({ circle, stringName }) {
+  const { navigation, button, setButton } = useContext(NavigationContext);
+  const { navigate } = navigation;
+
+  function changeScreen(name) {
+    setButton(stringName);
+    if (name === "home-sharp") navigate("Home");
+    if (name === "file-tray-sharp") navigate("MyStuff");
+  }
   return (
     <IconWrapper circle={circle}>
-      <Pressable onPress={() => setIconClicked(stringName)}>
-        <IconBg
-          circle={circle}
-          iconClicked={iconClicked}
-          stringName={stringName}
-        >
+      <Pressable onPress={() => changeScreen(stringName)}>
+        <IconBg circle={circle} iconClicked={button} stringName={stringName}>
           <Icon name={stringName} size={circle ? 45 : 35} color="#fff" />
         </IconBg>
       </Pressable>

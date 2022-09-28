@@ -1,22 +1,18 @@
-import { useContext, useEffect } from "react";
 import styled from "styled-components";
-import NavigationContext from "../../contexts/NavigationContext";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
 
-function HomeComponent({ navigation }) {
-  const { setNavigation } = useContext(NavigationContext);
-  useEffect(() => setNavigation(navigation), []);
+function MyStuffComponent() {
   return (
     <Main>
       <HeaderComponent />
-      <Text>Opa sou o componente home em!</Text>
+      <Text>Opa sou o componente das coisas em!</Text>
       <FooterComponent />
     </Main>
   );
 }
 
-export default HomeComponent;
+export default MyStuffComponent;
 
 const Main = styled.View`
   position: relative;
