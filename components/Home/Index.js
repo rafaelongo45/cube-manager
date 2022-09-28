@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import Checklist from "../Checklist/Index";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
+import Reminders from "../Reminders/Index";
 
 function HomeComponent() {
   return (
     <Main>
       <HeaderComponent />
-      <Text>Opa sou o componente home em!</Text>
+      <Reminders/>
+      <Checklist/>
       <FooterComponent />
     </Main>
   );
