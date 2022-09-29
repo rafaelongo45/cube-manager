@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import NavigationContext from "../../contexts/NavigationContext";
+import Checklist from "../Checklist/Index";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
+import Reminders from "../Reminders/Index";
 
 function HomeComponent({ navigation }) {
   const { setNavigation } = useContext(NavigationContext);
@@ -10,7 +12,8 @@ function HomeComponent({ navigation }) {
   return (
     <Main>
       <HeaderComponent />
-      <Text>Opa sou o componente home em!</Text>
+      <Reminders />
+      <Checklist />
       <FooterComponent />
     </Main>
   );

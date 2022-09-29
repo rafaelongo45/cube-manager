@@ -43,7 +43,7 @@ const IconBg = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${({ circle }) => (circle ? "50px" : "100%")};
+  width: ${({ circle }) => (circle ? "50px" : "75px")};
   height: ${({ circle }) => (circle ? "50px" : "50px")};
   padding: ${({ circle }) => (circle ? "0 0 10px 3px" : "5px 20px")};
   background-color: ${({ iconClicked, stringName }) =>
