@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import NavigationContext from "../../contexts/NavigationContext";
 import Checklist from "../Checklist/Index";
 import FooterComponent from "../Footer/Index";

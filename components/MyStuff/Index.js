@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 import FooterComponent from "../Footer/Index";
 import HeaderComponent from "../Header/Index";
 import MyItemComponent from "./MyItem";

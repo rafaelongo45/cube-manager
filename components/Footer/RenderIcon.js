@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Pressable } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons.js";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import NavigationContext from "../../contexts/NavigationContext";
 
 function RenderIcon({ circle, stringName }) {

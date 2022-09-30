@@ -1,5 +1,5 @@
 import RenderIcon from "./RenderIcon.js";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 function FooterComponent() {
   const iconArr = [
