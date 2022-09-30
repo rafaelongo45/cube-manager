@@ -1,5 +1,4 @@
-import { StyleSheet } from "react-native-web";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 function HeaderComponent() {
   return (

@@ -1,9 +1,7 @@
 import RenderIcon from "./RenderIcon.js";
-import { useState } from "react";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 function FooterComponent() {
-  const [iconClicked, setIconClicked] = useState("");
   const iconArr = [
     { circle: false, stringName: "home-sharp" },
     { circle: true, stringName: "add" },
@@ -17,8 +15,6 @@ function FooterComponent() {
             key={iconObject.stringName}
             circle={iconObject.circle}
             stringName={iconObject.stringName}
-            iconClicked={iconClicked}
-            setIconClicked={setIconClicked}
           />
         );
       })}
