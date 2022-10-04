@@ -1,19 +1,28 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Pressable } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons.js";
 import styled from "styled-components/native";
 import NavigationContext from "../../contexts/NavigationContext";
+import NewIcons from "./NewIcons.js";
 
 function RenderIcon({ circle, stringName }) {
   const { navigation, button, setButton } = useContext(NavigationContext);
   const { navigate } = navigation;
+  const [displayIcons, setDisplayIcons] = useState(false);
 
   function changeScreen(name) {
     setButton(stringName);
+    if (name === "add") setDisplayIcons(!displayIcons);
     if (name === "home-sharp") navigate("Home");
     if (name === "file-tray-sharp") navigate("MyStuff");
   }
   return (
+    <>
+    {displayIcons ? 
+    <NewIcons/>
+    :
+    <></>
+    }
     <IconWrapper circle={circle}>
       <Pressable onPress={() => changeScreen(stringName)}>
         <IconBg circle={circle} iconClicked={button} stringName={stringName}>
@@ -21,6 +30,7 @@ function RenderIcon({ circle, stringName }) {
         </IconBg>
       </Pressable>
     </IconWrapper>
+    </>
   );
 }
 export default RenderIcon;
