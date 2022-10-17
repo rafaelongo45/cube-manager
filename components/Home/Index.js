@@ -11,10 +11,8 @@ function HomeComponent({ navigation }) {
   useEffect(() => setNavigation(navigation), []);
   return (
     <Main>
-      <HeaderComponent />
       <Reminders />
       <Checklist />
-      <FooterComponent />
     </Main>
   );
 }

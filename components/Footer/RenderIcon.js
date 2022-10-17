@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Pressable } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons.js";
 import styled from "styled-components/native";
-import NavigationContext from "../../contexts/NavigationContext";
+import NavigationContext from "../../contexts/NavigationContext.js";
 import NewIcons from "./NewIcons.js";
 
 function RenderIcon({ circle, stringName }) {
@@ -18,18 +18,18 @@ function RenderIcon({ circle, stringName }) {
   }
   return (
     <>
-    {displayIcons ? 
-    <NewIcons/>
-    :
-    <></>
-    }
-    <IconWrapper circle={circle}>
-      <Pressable onPress={() => changeScreen(stringName)}>
-        <IconBg circle={circle} iconClicked={button} stringName={stringName}>
-          <Icon name={stringName} size={circle ? 45 : 35} color="#fff" />
-        </IconBg>
-      </Pressable>
-    </IconWrapper>
+      {displayIcons ? <NewIcons setDisplayIcons={setDisplayIcons} /> : <></>}
+      <IconWrapper circle={circle}>
+        <Pressable
+          onPress={() => {
+            changeScreen(stringName);
+          }}
+        >
+          <IconBg circle={circle} iconClicked={button} stringName={stringName}>
+            <Icon name={stringName} size={circle ? 45 : 35} color="#fff" />
+          </IconBg>
+        </Pressable>
+      </IconWrapper>
     </>
   );
 }

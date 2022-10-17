@@ -9,7 +9,7 @@ export default function Checklist() {
 
   async function searchChecklist() {
     const data = await AsyncStorage.getItem("checklist");
-    if(data) setChecklist([...JSON.parse(data)]);
+    if (data) setChecklist([...JSON.parse(data)]);
   }
 
   function onPressFunction(name) {

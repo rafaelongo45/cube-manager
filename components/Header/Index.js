@@ -1,9 +1,24 @@
+import { useContext } from "react";
+import IconModal from "./IconModal.js";
 import styled from "styled-components/native";
 
+import ModalContext from "../../contexts/ModalContext.js";
+
 function HeaderComponent() {
+  const { isOpen, setIsOpen, modalTitle, iconModalName } =
+    useContext(ModalContext);
   return (
     <Main>
       <Text>Cube</Text>
+      {isOpen ? (
+        <IconModal
+          setIsOpen={setIsOpen}
+          modalTitle={modalTitle}
+          iconModalName={iconModalName}
+        />
+      ) : (
+        <></>
+      )}
     </Main>
   );
 }
@@ -16,6 +31,7 @@ const Main = styled.View`
   top: 0;
   left: 0;
   display: flex;
+  z-index: 1;
   align-items: center;
   justify-content: center;
   background-color: #3c3c3c;

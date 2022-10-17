@@ -4,8 +4,8 @@ import Icon from "react-native-vector-icons/Ionicons.js";
 function MyItemComponent({ name, icon }) {
   return (
     <Wrapper>
-      <IconWrapper>
-        <Icon name={icon} size={60} color="#fff" />
+      <IconWrapper name={name}>
+        <Icon name={icon} size={45} color="#fff" />
       </IconWrapper>
       <Title>{name}</Title>
     </Wrapper>
@@ -28,9 +28,9 @@ const IconWrapper = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40%;
-  width: 55%;
-  border-radius: 12px;
+  height: 75px;
+  width: 75px;
+  border-radius: 35px;
   background-color: #3c3c3c;
 `;
 
