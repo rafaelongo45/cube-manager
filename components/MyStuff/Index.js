@@ -12,7 +12,6 @@ function MyStuffComponent() {
   ];
   return (
     <Main>
-      <HeaderComponent />
       <Text>My Stuff</Text>
       <IconsWrapper>
         {iconArr.map((icon) => {
@@ -25,7 +24,6 @@ function MyStuffComponent() {
           );
         })}
       </IconsWrapper>
-      <FooterComponent />
     </Main>
   );
 }

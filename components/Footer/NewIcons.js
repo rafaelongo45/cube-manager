@@ -1,43 +1,54 @@
 import Icon from "react-native-vector-icons/Ionicons.js";
+import { Pressable } from "react-native";
 import styled from "styled-components/native";
+import { useContext } from "react";
+import ModalContext from "../../contexts/ModalContext.js";
 
-function NewIcons() {
+function NewIcons({ setDisplayIcons }) {
+  const { setIsOpen, setModalTitle, setIconModalName } = useContext(ModalContext);
+
   const iconArr = [
-    { circle: true, stringName: "list" },
-    { circle: true, stringName: "document-text" },
-    { circle: true, stringName: "alarm" },
-    { circle: true, stringName: "key" },
+    { circle: true, stringName: "list", title: 'checklist' },
+    { circle: true, stringName: "document-text", title: 'note' },
+    { circle: true, stringName: "alarm", title: 'reminder' },
+    { circle: true, stringName: "key", title: 'password' },
   ];
 
   return (
-    <>
-      <IconsWrapper>
-        {iconArr.map((iconObject) => {
-          return (
-            <IconWrapper circle={iconObject.circle} key={iconObject.stringName}>
+    <IconsWrapper>
+      {iconArr.map((iconObject) => {
+        return (
+          <IconWrapper circle={iconObject.circle} key={iconObject.stringName}>
+            <Pressable
+              onPress={() => {
+                setIsOpen(true);
+                setDisplayIcons(false);
+                setModalTitle(iconObject.title);
+                setIconModalName(iconObject.stringName);
+              }}
+            >
               <Icon
                 name={iconObject.stringName}
                 size={iconObject.circle ? 45 : 35}
                 color="#fff"
               />
-            </IconWrapper>
-          );
-        })}
-      </IconsWrapper>
-    </>
+            </Pressable>
+          </IconWrapper>
+        );
+      })}
+    </IconsWrapper>
   );
 }
 export default NewIcons;
 
 const IconsWrapper = styled.View`
   position: absolute;
-  bottom: 60px;
-  left: calc(50vw - 200px);
+  bottom: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  width: 400px;
+  width: 80%;
   height: 70px;
   background-color: transparent;
 `;
